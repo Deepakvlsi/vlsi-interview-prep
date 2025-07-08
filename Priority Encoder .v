@@ -15,11 +15,11 @@ module priority_encoder8to3 (
         8'b000001xx: y = 3'b010;
         8'b0000001x: y = 3'b001;
         8'b00000001: y = 3'b000;
-        default:     y = 3'bzzz; // Output high impedance if no input is active
+        default:     y = 3'bzzz; 
       endcase
     end
     else begin
-      y = 3'bzzz; // Disabled state
+      y = 3'bzzz; 
     end
   end
 endmodule
