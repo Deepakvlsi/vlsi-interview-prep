@@ -4,6 +4,29 @@
 ### Carry Look Ahead Adder ###
 Carry propagation delay occurs in adders during operations like multiplication and division, which involve multiple additions. In ripple carry adders, each bit must wait for the previous carry, causing delay. To overcome this, the Carry Look-Ahead Adder (CLA) precomputes carry signals using input bits, significantly reducing delay and speeding up arithmetic operations.
 ![image](https://github.com/user-attachments/assets/8ead9340-3a1a-49e5-8671-70320ed89951)
+<img width="292" alt="image" src="https://github.com/user-attachments/assets/898bbf9a-c25f-419c-b9a0-01b4a2d6eaf2" />
+
+For each bit `i`:
+- **Propagate**:  
+  `Pᵢ = Aᵢ ⊕ Bᵢ`  
+  Indicates whether the carry will propagate through this stage.
+- **Generate**:  
+  `Gᵢ = Aᵢ · Bᵢ`  
+  Indicates whether this stage will generate a carry regardless of the input carry.
+### Sum and Carry Equations
+- **Sum**:  
+  `Sᵢ = Pᵢ ⊕ Cᵢ`
+- **Carry Output**:  
+  `Cᵢ₊₁ = Gᵢ + (Pᵢ · Cᵢ)`
+
+Here, `Gᵢ` produces a carry when both `Aᵢ` and `Bᵢ` are 1, while `Pᵢ` allows carry to propagate from `Cᵢ` to `Cᵢ₊₁`.
+
+### Carry Output Expressions for a 4-bit CLA
+Given `Cin = C₀`, the carry outputs are computed as:
+C₁ = G₀ + P₀ · C₀
+C₂ = G₁ + P₁ · G₀ + P₁ · P₀ · C₀
+C₃ = G₂ + P₂ · G₁ + P₂ · P₁ · G₀ + P₂ · P₁ · P₀ · C₀
+C₄ = G₃ + P₃ · G₂ + P₃ · P₂ · G₁ + P₃ · P₂ · P₁ · G₀ + P₃ · P₂ · P₁ · P₀ · C₀
 
 
 
