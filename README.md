@@ -23,9 +23,9 @@ Here, `Gᵢ` produces a carry when both `Aᵢ` and `Bᵢ` are 1, while `Pᵢ` al
 
 ### Carry Output Expressions for a 4-bit CLA
 Given `Cin = C₀`, the carry outputs are computed as:
-C₁ = G₀ + P₀ · C₀
-C₂ = G₁ + P₁ · G₀ + P₁ · P₀ · C₀
-C₃ = G₂ + P₂ · G₁ + P₂ · P₁ · G₀ + P₂ · P₁ · P₀ · C₀
+C₁ = G₀ + P₀ · C₀  
+C₂ = G₁ + P₁ · G₀ + P₁ · P₀ · C₀  
+C₃ = G₂ + P₂ · G₁ + P₂ · P₁ · G₀ + P₂ · P₁ · P₀ · C₀  
 C₄ = G₃ + P₃ · G₂ + P₃ · P₂ · G₁ + P₃ · P₂ · P₁ · G₀ + P₃ · P₂ · P₁ · P₀ · C₀
 
 
